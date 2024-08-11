@@ -3,6 +3,10 @@
     --white: #e2e2e2;   
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 * {
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
@@ -347,4 +351,54 @@ h2 {
 .quote span {
     color:#cb9500;
     font-weight: 900;
+}
+
+/*  */
+/* Events page */
+/*  */
+
+.quick-nav {
+    display: flex;
+    margin-top: 0px;
+    gap: 0.8rem;
+    /* border: 3px solid black; */
+    padding-left: 2px;
+    /* padding-right: 20px; */
+    /* padding-top: 5px; */
+    /* align-items: center; */
+    /* padding-bottom: 5px; */
+    color: var(--background);
+    justify-content: right;
+    /* background-color: yellowgreen; */
+
+    /* background-color: red; */
+}
+
+.quick-nav-items {
+    border: 3px solid black;
+    color: var(--background);
+    margin-top: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    filter: drop-shadow(4px 4px 0px black);
+    background-color: yellowgreen;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.quick-nav-items:hover {
+    background-color: #cb9500;
+    color: black;
+}
+
+#past {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+#participated {
+    margin-top: 80px;
+    margin-bottom: 80px; 
 }
