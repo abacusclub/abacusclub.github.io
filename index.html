@@ -1,111 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abacus Club</title>
-    <link rel="icon" href="abacus_club_logo.svg">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
-</head>
-<body> 
-    <div class="navbar-container">
-        <div class="nav-filler"></div>
-        <div class="navbar">
-            <div class="club-logo-text">
-                <a href="#">
-                    <h1><img src="abacus_club_logo.svg" class="navbar-logo"></h1>
-                </a>
-            </div>
-            <div class="navbar-elements">
-                <a href="#">
-                    <h2>About</h2>
-                </a>
-                <a href="#">
-                    <h2>Events</h2>
-                </a>
-                <a href="#">
-                    <h2>Members</h2>
-                </a>
-                <a href="#">
-                    <h2>Gallery</h2>
-                </a>
-            </div>
-        </div>
-        <div class="gradient"></div>
-    </div>
-    <hero class="hero-content">
-        <div>
-            <h1>CREATE,</h1>
-            <h1>INNOVATE,</h1>
-            <h1>PARTAKE.</h1>
-        </div>
-        <!-- lyrics to a certain song :) -->
-        <div class="text">
-        <div class="binary-design">
-            <p>01011001011011110111010100100000011001110110111100100000011001000110111101110111011011100010000001101010011101010111001101110100001000000110110001101001011010110110010100100000010010000110111101101100011110010010000001001101011000010111001001111001000010100100110101100001011100100111100100100000011011110110111000100000011000010010110000100000010011010110000101110010011110010010000001101111011011100010000001100001001000000110001101110010011011110111001101110011000010100101100101101111011101010111001000100000011000100110010101100001011101010111010001111001001000000110111001100101011101100110010101110010001000000110010101110110011001010111001000100000011100110110001101100001011100100110010101100100001000000110110101100101000010100100110101100001011100100111100100100000011011110110111000100000011000010010110000100000010011010110000101110010011110010010000001101111011011100010000001100001001000000110001101110010011011110111001101110011<br class="pc-only"> Good song, innit?</p>
-        </div>
-        </div>
-    </hero>
-    <div class="intro">
-        <h1 style="margin-right: 0.55ch; font-weight: 500;">We are the</h1>
-        <div>
-            <h1 style="background-color: yellowgreen;" class="box bold">ABACUS CLUB</h1>
-        </div>
-    </div>
-    <hr class="blocky-hr">
-    <section>
-        <h1 style="background-color: #d7493c;" class="box bold events-header">Upcoming Events</h1>
-        <div class="events-container">
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>Bits N Bytes (VIII & IX)</h1>
-                    <h1>31/08/24</h1>
-                </div>
-                <div class="event-desc">
-                    <p>Bits N' Bytes is the flagship event of the Abacus Club! Participants have to use the chosen application to make something based on the given topic.<br>This's year's softwares are:<br>Class VIII - Scratch<br>Class IX - HTML & CSS</p>
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>Bits N Bytes (XI & XII)</h1>
-                    <h1>15/10/24</h1>
-                </div>
-                <div class="event-desc">
-                    <p>Bits N' Bytes is the flagship event of the Abacus Club! Participants have to use the chosen application to make something based on the given topic.<br>Softwares to be revealed soon.</p>
-                </div>
-            </div>
+:root {
+    --background: #222729;
+    --white: #e2e2e2;
+    
+}
 
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>Gaming Event</h1>
-                    <h1>??/09/24</h1>
-                </div>
-                <div class="event-desc">
-                    <p>????</p>
-                </div>
-            </div>
-        </div>
-        <p class="subtitle-text">Click <a href="#">here</a> to view past events.</p>
-    </section>
-    <hr class="blocky-hr">
-    <section class="cards-section">
-        <div style="background-color: #D19A66;" class="box">
-            <h1 class="bold card-header">Learn more?</h1>
-            <hr class="black-hr">
-            <h2 class="bold card-text">Head over to the <a href="abacus_club_investiture_2.pdf">About</a> and <a href="#">Members</a> pages!</h2>
-        </div>
-        <div style="background-color: #C678DD; flex:1;"class="box">
-            <h1 class="bold card-header">Interested in joining?</h1>
-            <hr class="black-hr">
-            <h2 class="bold card-text">Applications for class XI open at end of year!</h2>
-        </div>
-    </section>
-    <hr class="blocky-hr">
-</body>
-</html>
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    max-width: 55rem;
+    margin: auto;
+    color: var(--white);
+    padding-left: 15px;
+    padding-right: 16.5px;
+}
+
+h1 {
+    font-size: medium;
+}
+
+h2 {
+    font-size: small;
+}
+
+.blocky-hr {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border: 8px dashed color-mix(in srgb, var(--background) 65%, var(--white) 35%);
+}
+
+.black-hr {
+    border: 1.5px solid black;
+}
+
+.gradient {
+    height: 30px;
+    background-image: linear-gradient(var(--background), transparent);
+    margin-right: -9px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.nav-filler{
+    background-color: var(--background);
+    margin: 0;
+    height: 30px;
+    filter: drop-shadow(10px 0px 0px var(--background))
+    drop-shadow(0px 10px 0px var(--background));
+}
+
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: var(--white);
+    border: 3.5px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: var(--background);
+    filter: drop-shadow(8.5px 8.5px 0px black);
+}
+
+
+.club-logo-text {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navbar-logo {
+    width: 5ch;
+    height: 5%;
+    margin: -13px -10px -16px -10px;
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-elements a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-decoration: none;
+    color: var(--background);
+}
+
+.navbar a:hover {
+    filter: invert(1);
+    background-color: white;
+}
+
+.navbar-elements h2 {
+    font-size: 84%;
+    font-weight: 450;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-content h1 {
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 2rem;
+}
+
+.hero-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.binary-design {
+    margin-top: 1rem;
+    overflow:visible;
+    padding-left: 3rem;
+    max-height: 13.2rem;
+}
+
+.binary-design p::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.binary-design p {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #33393b;
+    font-size: 1.9rem;
+    font-weight: 600;
+    overflow: scroll;
+    max-height: 20rem;
+    word-break: break-all;
+    white-space: normal;
+}
+
+@media only screen and (max-width: 523px) {
+    .hero-content {
+        display: block;
+    }
+
+    .binary-design {
+        height: 3rem;
+        padding: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .binary-design p {
+        white-space: nowrap;
+        height: auto;
+    }
+
+    .pc-only {
+        display: none;
+    }
+}
+
+.intro {
+    display: flex;
+}
+
+.box {
+    border: 3px solid black;
+    color: var(--background);
+    margin-top: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    filter: drop-shadow(8px 8px 0px black);
+}
+
+.intro h1 {
+    font-size: 1.5rem;
+}
+
+.club-logo {
+    display: block;
+    width: 35%;
+}
+
+.events-header {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    font-weight: 750;
+}
+
+.events-container {
+    filter: drop-shadow(8px 8px 0px black);
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.event {
+    background-color: var(--white);
+    border: 3.5px solid black;
+    color: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.event-name-date {
+    background: #528BFF;
+    padding-left: 8px;
+    padding-right: 9px;
+    border-bottom: 3.5px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-name-date h1 {
+    font-size: 1.5rem;
+    font-weight: 750;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-desc {
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--white);
+}
+
+.event-desc p {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.subtitle-text {
+    text-align: center;
+    color: color-mix(in srgb, var(--background) 30%, var(--white) 70%);
+}
+
+.subtitle-text a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.subtitle-text a:hover {
+    color: greenyellow;
+}
+
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.card-header {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: var(--white);;
+}
+
+.card-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 400px) {
+    .cards-section {
+        flex-direction: column  ;
+    }
+}
+
+.card-text a {
+    text-decoration: underline;
+    color: #17191b;
+    font-weight: inherit;
+}
