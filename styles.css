@@ -95,7 +95,11 @@ h2 {
     justify-content: flex-end;
     align-items: center;
 }
-
+@media only screen and (max-width: 390px) {
+    .navbar-elements a{
+        margin-left: -5px
+    }
+}
 .navbar-elements a {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -109,8 +113,8 @@ h2 {
 }
 
 .navbar-elements h2 {
-    font-size: 84%;
-    font-weight: 450;
+    font-size: 86%;
+    font-weight: 550;
 }
 
 .hero-content {
