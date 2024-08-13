@@ -337,6 +337,17 @@ h2 {
     font-weight: 450;
 }
 
+.about-desc a {
+    font-size: inherit;
+    font-weight: inherit;
+    color: #cb9500;
+    text-decoration: none;
+}
+
+.about-desc a:hover {
+    text-decoration: underline;
+}
+
 .quote h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -355,6 +366,16 @@ h2 {
 .quote span {
     color:#cb9500;
     font-weight: 900;
+}
+
+.quote-author {
+    text-decoration: none;
+    color:inherit;
+    font-weight: inherit;
+}
+
+.quote-author:hover {
+    text-decoration: underline;
 }
 
 /*  */
