@@ -312,6 +312,23 @@ h2 {
     color: #cb9500;
 }
 
+.hidden {
+    opacity: 0;
+    transform: translateY(5%);
+    transition: 0.3s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
 /*  */
 /* About page */
 /*  */

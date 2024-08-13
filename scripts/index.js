@@ -25,7 +25,7 @@ const upcoming_events_container = document.getElementById("upcoming_events");
 
 upcoming.forEach(item => {
     upcoming_events_container.innerHTML += `
-<div class="event">
+<div class="event hidden">
     <div class="event-name-date">
         <h1>${item.name}</h1>
         <h1>${item.date}</h1>
@@ -35,4 +35,17 @@ upcoming.forEach(item => {
     </div>
 </div>
 `
+});
+
+const observer = new IntersectionObserver((entires) => {
+    entires.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+const hidden_elements = document.querySelectorAll('.hidden')
+hidden_elements.forEach((element) => {
+    observer.observe(element)
 });
