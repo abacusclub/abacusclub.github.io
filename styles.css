@@ -35,16 +35,25 @@ h2 {
     margin-top: 45px;
     margin-bottom: 45px;
     border: 8px dashed color-mix(in srgb, var(--background) 65%, var(--white) 35%);
+    border-radius: 6px;
 }
 
 .black-hr {
     border: 1.5px solid black;
+    border: 4px;
 }
 
 .gradient {
-    height: 30px;
-    background-image: linear-gradient(var(--background), transparent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 175px;
+    background-image: linear-gradient(var(--background), 60%, transparent);
+    /* background-color: red; */
     margin-right: -9px;
+    margin-left: -9px;
 }
 
 .bold {
@@ -61,8 +70,9 @@ h2 {
 
 .navbar-container {
     position: sticky;
-    top: 0;
+    top: 30px;
     z-index: 2;
+    height: 100px;
 }
 
 .navbar {
@@ -76,6 +86,9 @@ h2 {
     padding-bottom: 5px;
     color: var(--background);
     filter: drop-shadow(8.5px 8.5px 0px black);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 30px;
 }
 
 
@@ -192,9 +205,11 @@ h2 {
     border: 3px solid black;
     color: var(--background);
     margin-top: 12px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
     filter: drop-shadow(8px 8px 0px black);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .intro h1 {
@@ -223,11 +238,13 @@ h2 {
 }
 
 .event {
-    background-color: var(--white);
+    background-color:  var(--white);
     border: 3.5px solid black;
     color: var(--background);
     display: flex;
     flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .event-name-date {
@@ -253,6 +270,7 @@ h2 {
     padding-left: 8px;
     padding-right: 8px;
     background-color: var(--white);
+
 }
 
 .event-desc p {
@@ -314,11 +332,14 @@ h2 {
 
 .hidden {
     opacity: 0;
-    transition: 0.45s;
+    transform: translateY(12.5%);
+    transition: all 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
 .show {
     opacity: 1;
+    transform: translateY(0%);
 }
 
 @media(prefers-reduced-motion) {
@@ -334,7 +355,7 @@ h2 {
 .about-section-container {
     border: 5px solid black;
     background-color:  color-mix(in srgb, var(--background) 83%, black 17%);
-    border-radius: 5px;
+    border-radius: 6px;
     margin-bottom: 50px;
 }
 
@@ -344,6 +365,7 @@ h2 {
     padding-left: 0.5rem;
     font-weight: 750;
     display: inline-block;
+    
 }
 
 
@@ -418,6 +440,8 @@ h2 {
     background-color: yellowgreen;
     font-weight: 500;
     text-decoration: none;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .quick-nav-items:hover {
