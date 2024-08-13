@@ -333,7 +333,7 @@ h2 {
 .hidden {
     opacity: 0;
     transform: translateY(12%);
-    transition: all 0.4s;
+    transition: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
@@ -421,11 +421,12 @@ h2 {
 
 .quick-nav {
     display: flex;
-    margin-top: 0px;
+    margin-top: 1px;
     gap: 0.8rem;
     color: var(--background);
     justify-content: right;
-    padding-right: 6px;
+    padding-right: 1px;
+    margin-bottom: 40px;
 }
 
 .quick-nav-items {
