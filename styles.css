@@ -314,13 +314,11 @@ h2 {
 
 .hidden {
     opacity: 0;
-    transform: translateY(5%);
-    transition: 0.3s;
+    transition: 0.45s;
 }
 
 .show {
     opacity: 1;
-    transform: translateY(0);
 }
 
 @media(prefers-reduced-motion) {
