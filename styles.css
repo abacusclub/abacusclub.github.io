@@ -365,17 +365,9 @@ h2 {
     display: flex;
     margin-top: 0px;
     gap: 0.8rem;
-    /* border: 3px solid black; */
-    padding-left: 2px;
-    /* padding-right: 20px; */
-    /* padding-top: 5px; */
-    /* align-items: center; */
-    /* padding-bottom: 5px; */
     color: var(--background);
     justify-content: right;
-    /* background-color: yellowgreen; */
-
-    /* background-color: red; */
+    padding-right: 6px;
 }
 
 .quick-nav-items {

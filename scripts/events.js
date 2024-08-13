@@ -58,6 +58,8 @@ const participated_events_container = document.getElementById("participated_even
 
 participated.forEach(item => {
     item.description = item.description.replaceAll("\n", "<br>");
+    item.date = item.date.slice(0, -5)
+    
     participated_events_container.innerHTML += `
 <div class="event">
     <div class="event-name-date">
