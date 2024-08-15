@@ -316,8 +316,8 @@ h2 {
 
 .cards-section {
     display: flex;
-    justify-content: space-between;
     gap: 1.2rem;
+    align-items: stretch;
 }
 
 .card-header {
@@ -336,7 +336,7 @@ h2 {
     font-size: 1rem;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
     .cards-section {
         flex-direction: column;
     }
