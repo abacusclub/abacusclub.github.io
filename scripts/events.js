@@ -23,6 +23,8 @@ events.forEach(item => {
 const upcoming_events_container = document.getElementById("upcoming_events");
 
 upcoming.forEach(item => {
+    item.description = item.description.replaceAll("\n", "<br>")
+
     if (item.button) {
         upcoming_events_container.innerHTML += `
             <div class="event">
@@ -52,6 +54,8 @@ upcoming.forEach(item => {
 const past_events_container = document.getElementById("past_events");
 
 past.forEach(item => {
+    item.description = item.description.replaceAll("\n", "<br>")
+
     if (item.button) {
         past_events_container.innerHTML += `
             <div class="event">
@@ -82,6 +86,7 @@ const participated_events_container = document.getElementById("participated_even
 
 participated.forEach(item => {
     item.date = item.date.slice(0, -5);
+    item.description = item.description.replaceAll("\n", "<br>")
 
     if (item.button) {
         participated_events_container.innerHTML += `

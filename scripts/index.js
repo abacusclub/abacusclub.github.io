@@ -22,6 +22,8 @@ events.forEach(item => {
 const upcoming_events_container = document.getElementById("upcoming_events");
 
 upcoming.forEach(item => {
+    item.description = item.description.replaceAll("\n", "<br>")
+
     if (item.button) {
         upcoming_events_container.innerHTML += `
             <div class="event hidden">
