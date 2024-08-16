@@ -1,115 +1,138 @@
-import events from "/data/events.json" with { type:"json" };
-import participated from "/data/participatedevents.json" with { type:"json" };
+fetch("./data/events.json")
+    .then((res) => {
+        return res.json()
+    })
+    .then((data) => {
+        generatePastAndUpcomingEvents(data);
+    })
+    .catch(error => {
+        console.error("Error: ", error)
+    });
 
-let upcoming = [];
-let past = [];
+fetch("./data/participatedevents.json")
+    .then((res) => {
+        return res.json()
+    })
+    .then((data) => {
+        generateParticipatedEvents(data);
+    })
+    .catch(error => {
+        console.error("Error: ", error)
+    });
 
-events.forEach(item => {
-    let dateParts = item.date.split("/") 
-    let date = new Date(dateParts[2], dateParts[1]-1, dateParts[0]);
-    item.date = item.date.slice(0, -5)
+function generatePastAndUpcomingEvents(events) {
+    let upcomingEvents = [];
+    let pastEvents = [];
+
+    events.forEach(item => {
+        let dateParts = item.date.split("/") 
+        let date = new Date(dateParts[2], dateParts[1]-1, dateParts[0]);
+        item.date = item.date.slice(0, -5)
+        
+        if (date.getTime() < Date.now()) {
+            pastEvents.push(item)
+        } else if (date.getTime() >= Date.now()) {
+            upcomingEvents.push(item)
+        } else {
+            upcomingEvents.push(item)
+        };
     
-    if (date.getTime() < Date.now()) {
-        past.push(item)
-    } else if (date.getTime() >= Date.now()) {
-        upcoming.push(item)
-    } else {
-        upcoming.push(item)
-    };
+        item.description = item.description.replaceAll("\n", "<br>");
+    });
+    
+    const upcomingEventsContainer = document.getElementById("upcoming_events");
+    
+    upcomingEvents.forEach(item => {
+        item.description = item.description.replaceAll("\n", "<br>")
+    
+        if (item.button) {
+            upcomingEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                        <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
+                    </div>
+                </div>`
+        } else {
+            upcomingEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                    </div>
+                </div>`     
+        };
+    });
+    
+    const pastEventsContainer = document.getElementById("past_events");
+    
+    pastEvents.forEach(item => {
+        item.description = item.description.replaceAll("\n", "<br>")
+    
+        if (item.button) {
+            pastEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                        <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
+                    </div>
+                </div>`
+        } else {
+            pastEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                    </div>
+                </div>`     
+        };
+    });
+};
 
-    item.description = item.description.replaceAll("\n", "<br>");
-});
+function generateParticipatedEvents(events) {
+    const participatedEventsContainer = document.getElementById("participated_events");
 
-const upcoming_events_container = document.getElementById("upcoming_events");
-
-upcoming.forEach(item => {
-    item.description = item.description.replaceAll("\n", "<br>")
-
-    if (item.button) {
-        upcoming_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                    <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
-                </div>
-            </div>`
-    } else {
-        upcoming_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                </div>
-            </div>`     
-    };
-});
-
-const past_events_container = document.getElementById("past_events");
-
-past.forEach(item => {
-    item.description = item.description.replaceAll("\n", "<br>")
-
-    if (item.button) {
-        past_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                    <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
-                </div>
-            </div>`
-    } else {
-        past_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                </div>
-            </div>`     
-    };
-});
-
-const participated_events_container = document.getElementById("participated_events");
-
-participated.forEach(item => {
-    item.date = item.date.slice(0, -5);
-    item.description = item.description.replaceAll("\n", "<br>")
-
-    if (item.button) {
-        participated_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                    <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
-                </div>
-            </div>`
-    } else {
-        participated_events_container.innerHTML += `
-            <div class="event">
-                <div class="event-name-date">
-                    <h1>${item.name}</h1>
-                    <h1>${item.date}</h1>
-                </div>
-                <div class="event-desc">
-                    <p>${item.description}</p>
-                </div>
-            </div>`     
-    };
-});
+    events.forEach(item => {
+        item.date = item.date.slice(0, -5);
+        item.description = item.description.replaceAll("\n", "<br>")
+    
+        if (item.button) {
+            participatedEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                        <a class="event-button" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.button}<i class="fa-solid fa-up-right-from-square fa-sm"></i></a>
+                    </div>
+                </div>`
+        } else {
+            participatedEventsContainer.innerHTML += `
+                <div class="event">
+                    <div class="event-name-date">
+                        <h1>${item.name}</h1>
+                        <h1>${item.date}</h1>
+                    </div>
+                    <div class="event-desc">
+                        <p>${item.description}</p>
+                    </div>
+                </div>`     
+        };
+    });  
+};
