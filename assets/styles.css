@@ -35,7 +35,6 @@ h2 {
     margin-top: 45px;
     margin-bottom: 45px;
     border: 8px dashed color-mix(in srgb, var(--background) 65%, var(--white) 35%);
-    border-radius: 3.5px;
 }
 
 .gradient {
